@@ -5,8 +5,10 @@
 
 #soy un comentario de 1 linea
 
-'''soy un
+""" 
+soy un
 comentarios
 de 
-varias lineas
-'''
+varias 
+lineas
+"""
