@@ -2,7 +2,6 @@ from Personaje import *
 from Armas import *
 
 
-
 #solicitar datos Spartan
 print("===== Datos de Heroe ========")
 nombreS= input("Escribe el nombre de tu Spartan")
@@ -54,6 +53,11 @@ print("")
 #Usamos los Metodos del Arma
 Arma.seleccionarArma(Spartan.nombre)
 Arma.recargarArma(65)
+
+
+Arma.seleccionarArma(Nemesis.nombre)
+Arma.recargarArma(10)
+
 
 
 
