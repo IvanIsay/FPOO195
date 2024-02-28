@@ -24,14 +24,14 @@ Arma= Armas()
 
 
 #Usamos los atributos Spartan
-print("===== EL objeto Spartan contiene ========")
+print("===== El objeto Spartan contiene ========")
 print(Spartan.nombre)
 print(Spartan.especie)
 print(Spartan.altura)
 print("")
 
 #Usamos los atributos Nemesis
-print("===== EL objeto Nemesis contiene ========")
+print("===== El objeto Nemesis contiene ========")
 print(Nemesis.nombre)
 print(Nemesis.especie)
 print(Nemesis.altura)
@@ -40,24 +40,27 @@ print("")
 
 #Usamos los Metodos del Spartan
 
-print("======  Metodos del Objeto Spartan ===")
+print("======  Acciones del Objeto Spartan ===")
 Spartan.correr(False)
 Spartan.lanzarGranada()
 print("")
 
-print("======  Metodos del Objeto Nemesis ===")
+print("======  Acciones del Objeto Nemesis ===")
 Nemesis.correr(True)
 Nemesis.lanzarGranada()
 print("")
 
 #Usamos los Metodos del Arma
+
+print("====== Selecciona arma del Spartan ======")
 Arma.seleccionarArma(Spartan.nombre)
 Arma.recargarArma(65)
+print("")
 
-
+print("====== Selecciona arma del Villano ======")
 Arma.seleccionarArma(Nemesis.nombre)
 Arma.recargarArma(10)
-
+print("")
 
 
 
