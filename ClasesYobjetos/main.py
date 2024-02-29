@@ -50,7 +50,6 @@ Nemesis.correr(True)
 Nemesis.lanzarGranada()
 print("")
 
-
 #Usamos los Metodos del Arma
 
 print("====== Selecciona arma del Spartan ======")
@@ -78,6 +77,8 @@ print(Nemesis.getNombre())
 print(Nemesis.getEspecie())
 print("")
 
+
+Spartan.__pensar()
  
 
 

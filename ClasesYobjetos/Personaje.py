@@ -19,7 +19,9 @@ class Personaje:
     def lanzarGranada(self):
         print(self.__nombre+" Pego una granada") 
         
-    
+    def __pensar(self):
+        print(self.__nombre +" Esta pensando") 
+        
     
 	# Definimos Getters y Setters para acceder a los atributos
     def getEspecie(self):
