@@ -1,7 +1,7 @@
 import sys
 from Persona import *
 
-people= Persona()
+objectPeople= Persona()
 
 while True:
     print("===== Menú =====")
@@ -19,30 +19,29 @@ while True:
         nom= input("Escribe el Nombre: ")
         eda= input("Escribe la Edad: ")
         
-        people.Insertar(id,nom,eda)
+        objectPeople.Insertar(id,nom,eda)
         print(" :: Persona Agregada correctamente ::")
         
     elif opcion == "2":
         print(" :: Estos son las Personas guardadas ::")
-        people.consultarTodos()
+        objectPeople.consultarTodos()
         
     elif opcion == "3":
         print(" :: Introduce Id de la persona ::")
         id= input("Id: ")
-        people.buscarUsuario(id)
+        objectPeople.buscarUsuario(id)
         
     elif opcion == "4":
         print(" :: Introduce Id de la persona a eliminar ::")
         id= input("Id: ")
-        people.eliminar(id)
+        objectPeople.eliminar(id)
         
     elif opcion == "5":
         print(" :: Introduce Id de la persona a editar ::")
         id= input("Id: ")
         nm= input("Nombre: ")
         ed= input("Edad: ")
-        people.editar(id,nm,ed)
-        
+        objectPeople.editar(id,nm,ed)
         
     elif opcion == "6":
         print("¡Hasta luego!")
