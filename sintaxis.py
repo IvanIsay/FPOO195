@@ -65,7 +65,7 @@ print(10 >= 9)
 print(10 != 9)
 print(10 <= 9) """
 
-#logicos
+""" #logicos
 x= 1
 print(x < 5 and x < 10)
 print(x < 5 or x < 10)
@@ -75,4 +75,9 @@ print(not(x < 5 and x < 10))
 #Para operaciones binarias
 print(x < 5 & x < 10)
 print(x < 5 | x < 10)
-print(not(x < 5 & x < 10))
+print(not(x < 5 & x < 10)) """
+
+x = int(input())
+y = int(input())
+ 
+print(x + y)
