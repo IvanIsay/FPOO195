@@ -7,7 +7,6 @@ def mostrarMensajes():
     print(messagebox.showwarning('showwarning','Warninig'))
     print(messagebox.askokcancel(message="¿Desea continuar?",title="Soy el titulo"))
 
-
 # Metodo para crear Botones
 def addbtn():
     botonVerde.config(text="+")
