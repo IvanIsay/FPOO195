@@ -7,6 +7,14 @@ objControlador= Controlador()
 
 def ejecutaInsert():
     objControlador.insertUsuario(var1.get(),var2.get(),var3.get())
+    
+def busUsuario():
+    usuarioBD= objControlador.buscarUsuario(varBus.get())
+    if usuarioBD == []:
+        messagebox.showwarning("Nada","Id no existe en BD")
+    else:
+        print(usuarioBD)
+
 
 # 1 crear la ventana
 Ventana= Tk()
@@ -51,6 +59,18 @@ Entry(pestana1, textvariable=var3).pack()
 Button(pestana1,text="Guardar usuario",command=ejecutaInsert).pack()
 
 
+#6. Pestaña 2:Buscar Usuario
+
+Label(pestana2, text="Buscar Usuario",fg="red" ,font=("Mono",18)).pack()
+
+varBus= tk.StringVar()
+Label(pestana2,text="Id: ").pack()
+Entry(pestana2, textvariable=varBus).pack()
+
+Button(pestana2,text="Buscar usuario",command=busUsuario).pack()
+
+Label(pestana2, text="Registrado:",fg="blue" ,font=("Mono",14)).pack()
+tk.Text(pestana2,height=5, width=52).pack()
 
 
 
