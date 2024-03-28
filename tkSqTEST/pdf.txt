@@ -1,0 +1,74 @@
+
+
+1. pip install fpdf
+
+2. Crear Clase GeneradorPDF
+
+from fpdf import FPDF
+from Controlador import *
+objCont2= Controlador()
+
+class GenPDF(FPDF):
+    
+
+    def header(self):
+        self.set_font("Times", "BU", 14)
+        self.cell(0, 10, "Usuarios Registrados ", 0, 1, "C")
+       
+    def footer(self):
+        self.set_y(-15)
+        self.set_font("Arial", "I", 8)
+        self.cell(0, 10, "Página %s" % self.page_no(), 0, 0, "C")
+
+    def chapter_body(self):
+        self.set_font("Arial", "I", 10)
+        self.set_fill_color(135,206,235)
+        listaUsuarios= objCont2.todosUsuarios()
+        self.multi_cell(100, 10,"ID:  "+"Usuario:   "+ "Correo:   ", 1,'C',1)
+        for i in listaUsuarios:
+            self.multi_cell(100, 10, str(i[0])+"  "+i[1]+"  "+i[2], 1,'C',0)
+
+
+================================================================================================
+
+MultiCell(float w, float h, string txt [, mixed border [, string align [, boolean fill]]])
+
+SetFillColor(int r [, int g, int b])
+
+Cell(float w [, float h [, string txt [, mixed border [, int ln [, string align [, boolean fill [, mixed link]]]]]]])
+
+SetFont(string family [, string style [, float size]])
+
+SetTextColor(int r [, int g, int b])
+
+
+==================================================================================================
+
+Notebook
+
+from GenPDF import *
+import os
+
+
+# Pestaña6:Reportes PDF
+
+Label(pestana6, text="Reportes PDF",fg="green" ,font=("Mono",18)).pack()
+
+varTipdf= tk.StringVar()
+Label(pestana6,text="Titulo del PDF: ").pack()
+Entry(pestana6, textvariable=varTipdf).pack()
+
+Button(pestana6,text="Crear Reporte Usuarios",command=generaPdf ).pack()
+
+
+
+def generaPdf():
+    if varTipdf.get() == "":
+        messagebox.showwarning("Nombre obligatorio","Escribe un nombre para el PDF")
+    else:
+        Objpdf.add_page()
+        Objpdf.chapter_body()
+        Objpdf.output(str(varTipdf.get())+".pdf")
+        pdf_path ="C:/laragon/www/FPOO195/"+str(varTipdf.get())+".pdf"
+        messagebox.showinfo("Archivo Creado","PDF disponible en la carpeta de tu proyecto")
+        os.system(f"start {pdf_path}")

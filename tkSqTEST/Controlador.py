@@ -57,8 +57,16 @@ class Controlador:
             
             except sqlite3.OperationalError:
                 print("No se pudo ejecutar la busqueda")
-                
-
-
             
+    def todosUsuarios(self):
+        conex= self.conexion()
+        try:
+            cursor = conex.cursor()
+            sqlSelectA= "select * from usuarios"
+            cursor.execute(sqlSelectA)
+            usuariox= cursor.fetchall()
+            conex.close()
+            return usuariox 
             
+        except sqlite3.OperationalError:
+            print("No se pudo ejecutar la busqueda")
